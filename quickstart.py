@@ -108,14 +108,14 @@ def show_the_login_form():
     return 'show_the_login_form GET'
 
 
-from flask import request
+# from flask import request
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        return do_the_login()
-    else:
-        return show_the_login_form()
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     if request.method == 'POST':
+#         return do_the_login()
+#     else:
+#         return show_the_login_form()
 
 @app.route('/user/<username>')
 def profile(username):
@@ -128,6 +128,16 @@ with app.test_request_context():
     print(url_for('profile', username='John Doe'))
     print(url_for('static', filename='style.css'))
 
+
+
+# Rendering Templates
+
+from flask import render_template
+
+@app.route('/hello/')
+@app.route('/hello/<name>')
+def hello(name=None):
+    return render_template('hello.html', name=name)
 
 
 
