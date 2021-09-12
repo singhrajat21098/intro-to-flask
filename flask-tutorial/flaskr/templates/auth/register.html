@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
 
-{% block header %}
-<h1>
-    {% block title %}Register{% endblock %}
-</h1>
-{% endblock %}
+
 {% block content %}
-<form method="post">
-    <label for="username">Username</label>
-    <input type="text" name='username' id='username' required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Register">
-</form>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Flaskr - Register</h1>
+        <p class="col-lg-10 fs-4">Create your account now and start blogging</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border rounded-3 bg-light" method="POST">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
+            <label for="username">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            <label for="password">Password</label>
+          </div>
+          <hr class="my-4">
+          <button class="w-100 btn btn-lg btn-warning" type="submit" value="Register">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
 {% endblock %}

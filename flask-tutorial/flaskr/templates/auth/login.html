@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
 
-{% block header %}
-  <h1>{% block title %}Log In{% endblock %}</h1>
+{% block content %}
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 mb-3">Flaskr - Login</h1>
+      <p class="col-lg-10 fs-4">Please login to post your thoughts and ideas on our website</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-light" method="POST">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
+          <label for="username">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+          <label for="password">Password</label>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-lg btn-primary" type="submit" value="Log In">Log In</button>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
-{% block content %}
-  <form method="post">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
-  </form>
-{% endblock %}
