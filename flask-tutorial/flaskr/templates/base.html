@@ -12,18 +12,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
-<nav class="navbar">
+<nav class="navbar border-bottom my-3">
 
     <h1 class="navbar-brand text-decoration-none fw-bold mx-3">Flaskr</h1>
+    {% block navbar_menu %}{% endblock %}
     <ul class="nav nav-pills d-flex justify-content-end">
         {% if g.user %}
         <li class="nav-item"><span class="mx-3 navbar-brand">{{ g.user['username'] }}</span></li>
-        <li class="nav-item"><a href="{{ url_for('auth.logout') }}" class="btn btn-outline-primary">Log Out</a></li>
+        <li class="nav-item"><a href="{{ url_for('auth.logout') }}" class="btn btn-outline-primary mx-3">Log Out</a></li>
         {% else %}
         <li class="nav-item"><a href="{{ url_for('auth.register') }}" class="btn btn-primary px-3 mx-3">Register</a></li>
         <li class="nav-item"><a href="{{ url_for('auth.login') }}" class="btn btn-outline-primary px-3 mx-3">Log In</a></li>
         {% endif %}
-        <li class="nav-item">{% block navbar_menu %}{% endblock %}</li>
 
         
     </ul>
